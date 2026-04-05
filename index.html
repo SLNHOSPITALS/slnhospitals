@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLN Hospitals | Super Speciality Gastro & Liver Centre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a237e; 
+            --teal: #4db6ac; 
+            --white: #ffffff;
+            --light: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light); color: #222; line-height: 1.6; }
+
+        /* Bolding Key Headers */
+        h1, h2, h3, b, strong { font-weight: 800 !important; }
+
+        header { 
+            background: var(--white); 
+            padding: 15px 10%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            position: sticky; top: 0; z-index: 1000; 
+        }
+        .logo-text h1 { color: var(--navy); font-family: 'Montserrat', sans-serif; font-size: 1.6rem; text-transform: uppercase; }
+        .logo-text p { color: var(--teal); font-size: 0.7rem; font-weight: 800; letter-spacing: 1.2px; margin-top: 4px; }
+
+        .call-btn { 
+            background: var(--teal); 
+            color: white !important; 
+            padding: 12px 25px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 800; 
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(77, 182, 172, 0.4);
+        }
+
+        .location-bar { background: #e0f2f1; color: var(--navy); padding: 14px; text-align: center; font-weight: 700; font-size: 0.95rem; border-bottom: 2px solid var(--teal); }
+
+        .hero { 
+            height: 60vh; 
+            background: linear-gradient(rgba(26, 35, 126, 0.8), rgba(26, 35, 126, 0.8)), 
+                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80'); 
+            background-size: cover; background-position: center; 
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 20px;
+        }
+        .hero-content h2 { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero-content p { font-size: 1.2rem; font-weight: 600; margin-bottom: 25px; }
+
+        .hero-wa-btn {
+            display: inline-block;
+            background: #25d366;
+            color: white !important;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .section-title { text-align: center; color: var(--navy); font-size: 2.2rem; margin: 50px 0 30px; font-weight: 800; }
+
+        .grid-container { 
+            max-width: 1200px; margin: 0 auto; 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 25px; padding: 0 20px; 
+        }
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08); text-align: center; padding-bottom: 25px; border-bottom: 4px solid var(--teal);}
+        .card-img { height: 180px; background-size: cover; background-position: center; margin-bottom: 20px; }
+        .img-gastro { background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600'); }
+        .img-liver { background-image: url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600'); }
+        .img-pancreas { background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600'); }
+        .img-endoscopy { background-image: url('https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600'); }
+
+        .card h3 { color: var(--navy); font-size: 1.3rem; margin-bottom: 10px; }
+        .card p { font-weight: 600; color: #555; padding: 0 15px; font-size: 0.9rem; }
+
+        .doctor-section { background: var(--navy); color: white; padding: 60px 10%; text-align: center; margin-top: 50px; }
+        .doctor-section h2 { color: var(--teal); font-size: 2.5rem; margin-bottom: 15px; }
+        .doctor-section p { font-size: 1.1rem; font-weight: 600; }
+        .reg-tag { background: var(--white); color: var(--navy); padding: 8px 20px; border-radius: 5px; font-size: 0.9rem; font-weight: 800; display: inline-block; margin-top: 20px; }
+
+        .whatsapp-float { 
+            position: fixed; bottom: 30px; right: 30px; 
+            background: #25d366; color: white; 
+            width: 65px; height: 65px; border-radius: 50%; 
+            display: flex; justify-content: center; align-items: center; 
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4); z-index: 2000;
+        }
+
+        footer { background: #111; color: #fff; padding: 50px 10%; text-align: left; border-top: 5px solid var(--teal); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .footer-info h4 { color: var(--teal); font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
+        .footer-info p { margin-bottom: 12px; font-size: 1rem; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            header { padding: 10px 5%; }
+            .hero-content h2 { font-size: 1.8rem; }
+            .nav-contacts { display: none; }
+            .footer-grid { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">
+            <h1>SLN HOSPITALS</h1>
+            <p>SUPERSPECIALITY GASTRO, LIVER & ENDOSCOPY CENTRE</p>
+        </div>
+        <div class="nav-contacts">
+            <a href="tel:+918919396627" class="call-btn">📞 CALL: +91 8919396627</a>
+        </div>
+    </header>
+
+    <div class="location-bar">
+        📍 OLD VIJAYA DIAGNOSTIC CENTRE, PADMAVATHI NAGAR, NANDYAL - 518501
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>ADVANCED CARE FOR YOUR HEALTH</h2>
+            <p>Nandyal's Premier Destination for Digestive & Liver Care</p>
+            <a href="https://wa.me/918919396627" class="hero-wa-btn" target="_blank">CONNECT ON WHATSAPP</a>
+        </div>
+    </section>
+
+    <h2 class="section-title">OUR SPECIALITIES</h2>
+
+    <div class="grid-container">
+        <div class="card"><div class="card-img img-gastro"></div><h3>GASTRO HEALTH</h3><p>EXPERT CARE FOR GERD, GASTRITIS, IBD & IBS</p></div>
+        <div class="card"><div class="card-img img-liver"></div><h3>HEPATOLOGY</h3><p>JAUNDICE, FATTY LIVER & LIVER CIRRHOSIS CARE</p></div>
+        <div class="card"><div class="card-img img-pancreas"></div><h3>PANCREATIC CARE</h3><p>ACUTE & CHRONIC PANCREATITIS SOLUTIONS</p></div>
+        <div class="card"><div class="card-img img-endoscopy"></div><h3>ADVANCED ENDOSCOPY</h3><p>PAINLESS DIAGNOSTIC & THERAPEUTIC PROCEDURES</p></div>
+    </div>
+
+    <section class="doctor-section">
+        <h2>DR. HARISIMHA GODHA</h2>
+        <p>MBBS, MD, DM (GASTROENTEROLOGY)</p>
+        <div class="reg-tag">REG NO: APMC/FMR/105825</div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h4>HOSPITAL ADDRESS</h4>
+                <p><strong>SLN HOSPITALS</strong></p>
+                <p><strong>OLD VIJAYA DIAGNOSTIC CENTRE,</strong></p>
+                <p><strong>PADMAVATHI NAGAR,</strong></p>
+                <p><strong>NANDYAL - 518501.</strong></p>
+            </div>
+            <div class="footer-info">
+                <h4>CONTACT DETAILS</h4>
+                <p><strong>PHONE: +91 8919396627</strong></p>
+                <p><strong>WHATSAPP: +91 8919396627</strong></p>
+                <p><strong>EMAIL: SLNHOSPITALS123@GMAIL.COM</strong></p>
+                <p><strong style="color:var(--teal);">OPEN 24/7 FOR PHARMACY & EMERGENCIES</strong></p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 40px; font-size: 0.8rem; opacity: 0.6;">© 2026 SLN HOSPITALS NANDYAL. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <a href="https://wa.me/918919396627" class="whatsapp-float" target="_blank">
+        <svg width="40" height="40" fill="white" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.83 0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.19-.3a8.132 8.132 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.24-8.24m-3.53 4.75c-.19 0-.52.07-.79.37-.27.3-.85.83-.85 2.02 0 1.19.87 2.33 1 2.5.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.15.2-.56.2-1.03.14-1.15-.06-.12-.22-.18-.48-.31s-1.51-.74-1.74-.83c-.23-.09-.39-.12-.56.12-.17.25-.64.83-.78.99-.14.17-.29.18-.54.06-.25-.13-1.08-.4-2.05-1.27-.76-.68-1.27-1.52-1.42-1.77-.15-.25-.02-.39.11-.52.11-.11.25-.3.38-.45.13-.15.17-.25.25-.42.09-.17.04-.31-.02-.45-.06-.14-.56-1.35-.77-1.84-.2-.48-.4-.41-.56-.42-.14 0-.3-.01-.47-.01z"/></svg>
+    </a>
+
+</body>
+</html>
