@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLN Hospitals | Super Speciality Gastro & Liver Centre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #1a237e; --teal: #4db6ac; --white: #ffffff; --light: #f4f7f6; --dark: #111111; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light); color: #222; overflow-x: hidden; }
+        h1, h2, h3, b, strong { font-weight: 800 !important; }
+
+        header { 
+            background: var(--white); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; 
+        }
+        .logo-text h1 { color: var(--navy); font-family: 'Montserrat', sans-serif; font-size: 1.4rem; text-transform: uppercase; line-height: 1; }
+        .logo-text p { color: var(--teal); font-size: 0.6rem; font-weight: 800; letter-spacing: 1px; margin-top: 5px; }
+
+        .call-link { 
+            background: var(--teal); color: white !important; padding: 12px 25px; border-radius: 50px; 
+            text-decoration: none; font-weight: 800; font-size: 0.9rem; display: inline-block; z-index: 1001;
+        }
+
+        .hero { 
+            height: 60vh; background: linear-gradient(rgba(26, 35, 126, 0.75), rgba(26, 35, 126, 0.75)), 
+            url('https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); 
+            background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 20px;
+        }
+
+        .section-title { text-align: center; color: var(--navy); font-size: 2.2rem; margin: 60px 0 10px; font-weight: 800; }
+        .grid-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 0 20px; }
+
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: 0.4s; cursor: pointer; border: 1px solid #eee; text-align: center; }
+        .card-img { height: 220px; background-size: cover; background-position: center; border-bottom: 4px solid var(--teal); }
+
+        .dr-preview { background: var(--navy); color: white; padding: 60px 20px; margin-top: 80px; text-align: center; cursor: pointer; }
+        .dr-preview h2 { font-family: 'Montserrat'; font-size: 2.2rem; color: var(--teal); }
+
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; z-index: 9999; overflow-y: auto; padding: 20px; }
+        .modal-content { background: white; max-width: 850px; margin: 20px auto; border-radius: 20px; overflow: hidden; position: relative; }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 2.5rem; color: #333; cursor: pointer; z-index: 10000; }
+        .modal-body { padding: 40px; }
+        .modal-header-img { height: 350px; background-size: cover; background-position: center; }
+
+        /* VERIFIED WHATSAPP FLOATING BUTTON */
+        .whatsapp-float { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            background-color: #25d366; 
+            width: 65px; 
+            height: 65px; 
+            border-radius: 50%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
+            z-index: 99999; 
+            text-decoration: none;
+            pointer-events: auto;
+        }
+
+        footer { background: var(--dark); color: white; padding: 60px 8%; text-align: left; line-height: 1.8; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .f-item h4 { color: var(--teal); margin-bottom: 20px; text-transform: uppercase; border-bottom: 2px solid var(--teal); display: inline-block; }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 5%; }
+            .logo-text h1 { font-size: 1.1rem; }
+            .hero h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">
+            <h1>SLN HOSPITALS</h1>
+            <p>SUPERSPECIALITY GASTRO, LIVER & ENDOSCOPY CENTRE</p>
+        </div>
+        <a href="tel:+918919396627" class="call-link">📞 CALL NOW</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2 style="font-size: 3rem; color: white;">YOUR HEALTH, OUR COMMITMENT</h2>
+            <p style="color: white; margin-bottom: 25px;">Nandyal's Destination for Advanced Digestive & Liver Care</p>
+        </div>
+    </section>
+
+    <h2 class="section-title">Specialized Services</h2>
+
+    <div class="grid-container">
+        <div class="card" onclick="openModal('gastro')">
+            <div class="card-img" style="background-image: url('https://images.pexels.com/photos/4225880/pexels-photo-4225880.jpeg');"></div>
+            <div class="card-body"><h3>Gastrointestinal Health</h3><p style="font-weight:700; color:var(--teal);">VIEW DETAILS →</p></div>
+        </div>
+        <div class="card" onclick="openModal('liver')">
+            <div class="card-img" style="background-image: url('https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg');"></div>
+            <div class="card-body"><h3>Hepatology</h3><p style="font-weight:700; color:var(--teal);">VIEW DETAILS →</p></div>
+        </div>
+        <div class="card" onclick="openModal('pancreas')">
+            <div class="card-img" style="background-image: url('https://images.pexels.com/photos/6129202/pexels-photo-6129202.jpeg');"></div>
+            <div class="card-body"><h3>Pancreatic Care</h3><p style="font-weight:700; color:var(--teal);">VIEW DETAILS →</p></div>
+        </div>
+        <div class="card" onclick="openModal('endo')">
+            <div class="card-img" style="background-image: url('https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg');"></div>
+            <div class="card-body"><h3>Advanced Endoscopy</h3><p style="font-weight:700; color:var(--teal);">VIEW DETAILS →</p></div>
+        </div>
+        <div class="card" onclick="openModal('lab')">
+            <div class="card-img" style="background-image: url('https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg');"></div>
+            <div class="card-body"><h3>Advanced Laboratory</h3><p style="font-weight:700; color:var(--teal);">VIEW DETAILS →</p></div>
+        </div>
+    </div>
+
+    <div class="dr-preview" onclick="openModal('doctor')">
+        <h2>DR. HARISIMHA GODHA</h2>
+        <p>MBBS, MD, DM (Gastroenterology) | St. John's Bangalore Ranker</p>
+        <p style="margin-top:15px; color: var(--teal); font-weight: 800;">CLICK TO VIEW PROFESSIONAL PROFILE →</p>
+    </div>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalImg" class="modal-header-img"></div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="f-item">
+                <h4>HOSPITAL FACILITIES</h4>
+                <p>• <strong>24/7 Pharmacy & Emergency Ward</strong></p>
+                <p>• <strong>Advanced Laboratory Diagnostics</strong></p>
+                <p>• <strong>General Ward & Special Rooms</strong></p>
+                <p>• <strong>Non-Invasive FibroScan Center</strong></p>
+                <p>• <strong>High-Precision ECG Machine</strong></p>
+            </div>
+            <div class="f-item">
+                <h4>CONTACT US</h4>
+                <p><strong>SLN HOSPITALS</strong></p>
+                <p>Old Vijaya Diagnostic Centre, Padmavathi Nagar, NANDYAL - 518501</p>
+                <p>📞 Emergency: <strong>+91 8919396627</strong></p>
+                <p>📧 Email: slnhospitals123@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918919396627" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <svg width="40" height="40" fill="white" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.83 0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.19-.3a8.132 8.132 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.24-8.24m-3.53 4.75c-.19 0-.52.07-.79.37-.27.3-.85.83-.85 2.02 0 1.19.87 2.33 1 2.5.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.15.2-.56.2-1.03.14-1.15-.06-.12-.22-.18-.48-.31s-1.51-.74-1.74-.83c-.23-.09-.39-.12-.56.12-.17.25-.64.83-.78.99-.14.17-.29.18-.54.06-.25-.13-1.08-.4-2.05-1.27-.76-.68-1.27-1.52-1.42-1.77-.15-.25-.02-.39.11-.52.11-.11.25-.3.38-.45.13-.15.17-.25.25-.42.09-.17.04-.31-.02-.45-.06-.14-.56-1.35-.77-1.84-.2-.48-.4-.41-.56-.42-.14 0-.3-.01-.47-.01z"/></svg>
+    </a>
+
+    <script>
+        const content = {
+            gastro: { title: "Gastrointestinal Health", img: "https://images.pexels.com/photos/4225880/pexels-photo-4225880.jpeg", body: "Comprehensive care for all digestive disorders. We manage GERD, Peptic Ulcers, IBD (Crohn's & Colitis), and Irritable Bowel Syndrome. Our center provides life-saving 24/7 care for Gastrointestinal Bleeding and other abdominal emergencies." },
+            liver: { title: "Hepatology (Liver Care)", img: "https://images.pexels.com/photos/6129507/pexels-photo-6129507.jpeg", body: "Advanced diagnosis and management of Liver Jaundice, Fatty Liver, and Chronic Hepatitis B & C. We specialize in the long-term management of Liver Cirrhosis and its complications, ensuring a better quality of life for our patients." },
+            pancreas: { title: "Pancreatic & Biliary Care", img: "https://images.pexels.com/photos/6129202/pexels-photo-6129202.jpeg", body: "Expert treatment for Acute and Chronic Pancreatitis. We handle complex gallstone diseases, bile duct stones, and screening for pancreatic cysts and tumors using high-precision diagnostics and evidence-based clinical protocols." },
+            endo: { title: "Advanced Endoscopy Suite", img: "https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg", body: "Our world-class suite offers painless Diagnostic Endoscopy, Colonoscopy, and ERCP. We are experts in therapeutic interventions including Polypectomy, Foreign Body Removal, and Endoscopic Band Ligation (EBL)." },
+            lab: { title: "Advanced Laboratory & Diagnostics", img: "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg", body: "Equipped with state-of-the-art technology including <strong>FibroScan</strong> for non-invasive liver assessment and high-precision ECG machines. Our fully automated lab ensures rapid and accurate results for all clinical investigations." },
+            doctor: { title: "Dr. Harisimha Godha", img: "https://i.ibb.co/XvmKpXj/doctor-profile.jpg", body: "<h3>Expert Gastroenterologist</h3><p><strong>MBBS & MD (General Medicine):</strong> Distinction Scholar.<br><strong>DM (Gastro):</strong> St. John's Medical College, Bangalore (All India 5th Rank).<br><strong>Experience:</strong> Handled 1000+ complex patients and endoscopy procedures.<br>Known for his precision in therapeutic endoscopy and empathetic patient care.</p>" }
+        };
+
+        function openModal(type) {
+            const data = content[type];
+            document.getElementById('modalImg').style.backgroundImage = `url(${data.img})`;
+            document.getElementById('modalBody').innerHTML = `<h2>${data.title}</h2><p style="font-size:1.1rem; line-height:1.7; margin-top:20px;">${data.body}</p>`;
+            document.getElementById('infoModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() { document.getElementById('infoModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
+        window.onclick = function(e) { if(e.target == document.getElementById('infoModal')) closeModal(); }
+    </script>
+</body>
+</html>
